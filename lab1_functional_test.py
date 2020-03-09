@@ -1,6 +1,8 @@
 from selenium import webdriver
 import unittest
 
+browser = webdriver.Firefox()
+
 class NewVisitorTest(unittest.TestCase):
 	def setUp(self):
 		self.browser = webdriver.Firefox()
@@ -11,7 +13,7 @@ class NewVisitorTest(unittest.TestCase):
 	def test_can_display_a_heroes_list_and_more_information_per_hero(self):
 		# Widget has heard about a new wiki app for the game called The Will of the Wisps. 
 		# She goes to check out its homepage
-		browser.get('http://localhost:8000')
+		self.browser.get('http://localhost:8000')
 
 		# She notices the page title and header mention 
 		# 'The Will of the Wisps Wiki'
