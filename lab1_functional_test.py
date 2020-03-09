@@ -1,15 +1,10 @@
 from selenium import webdriver
 import unittest
 
-browser = webdriver.Firefox()
-
 class NewVisitorTest(unittest.TestCase):
 	def setUp(self):
 		self.browser = webdriver.Firefox()
 		
-	def tearDown(self):
-		self.browser.quit()
-
 	def test_can_display_a_heroes_list_and_more_information_per_hero(self):
 		# Widget has heard about a new wiki app for the game called The Will of the Wisps. 
 		# She goes to check out its homepage
@@ -17,7 +12,7 @@ class NewVisitorTest(unittest.TestCase):
 
 		# She notices the page title and header mention 
 		# 'The Will of the Wisps Wiki'
-		self.assertIn('The Will of the Wisps Wiki', self.browser.title)
+		self.assertIn('The Will of the Wisps', self.browser.title)
 		
 		# She sees a list containing three heroes with their corresponding 
 		# names, health points, and damage 
